@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="mobilePMP.Views.EnviarPage"
+             BackgroundImage ="bckenviar.png"
+
+             xmlns:viewModels="clr-namespace:mobilePMP.ViewModels;assembly=mobilePMP"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             Title="{Binding Title}" Icon="{Binding Icon}">
+    <ContentPage.Content>
+        <ScrollView Style="{StaticResource ScrollViewStyle}">
+        <StackLayout Style="{StaticResource StackLayoutStyle}" VerticalOptions="CenterAndExpand">
+            <Grid Style="{StaticResource GridStyle}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/> 
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                 <Image x:Name="logo" Grid.Row="0" Grid.ColumnSpan="2" Source="Icon.png"  WidthRequest="100" HeightRequest="100"  
+                       HorizontalOptions="CenterAndExpand" Margin="20,20,20,0"/>
+
+                 <Entry  x:Name="usuarioenviar" Grid.Row="1" Grid.ColumnSpan="2" Placeholder="Usuario"/>
+
+                 <Label VerticalOptions="Start" Grid.Row="2"  Style="{StaticResource LabelStyle}"  Text="Balance :"/>
+                <Label VerticalOptions="Center" Grid.Row="3"  Style="{StaticResource LabelStyle}" HorizontalOptions="FillAndExpand" Text="{Binding CurrentTokenBalance}"/>
+               
+               
+                <Button x:Name="escanear" Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource BtnFlatStyle}" Text="Escanear" Clicked="OnScannerClicked" />
+                <Entry x:Name="montoenviar" Grid.Row="4" Grid.ColumnSpan="2" Text="{Binding Amount, Mode=TwoWay}"   Placeholder="Monto " Keyboard="Numeric"/>
+
+                <Button x:Name="enviar" Grid.Row="5" Grid.ColumnSpan="2" Style="{StaticResource ButtonStyle}" Text="Enviar" Clicked="OnEnviarClicked" Command="{Binding ExecuteTransactionCommand}"  />
+            </Grid>
+
+        </StackLayout>
+        
+        
+    </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

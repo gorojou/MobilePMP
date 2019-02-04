@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="mobilePMP.App"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+    <Application.Resources>
+       <ResourceDictionary>
+            <Style TargetType="StackLayout" x:Key="StackLayoutStyle">
+                <Setter Property="Orientation" Value="Vertical"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="Spacing" Value="2"/>
+            </Style>
+            <Style TargetType="ScrollView" x:Key="ScrollViewStyle">
+                <Setter Property="Orientation" Value="Vertical"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            </Style>
+            <Style TargetType="Entry" x:Key="EntryStyle">
+                <Setter Property="BackgroundColor" Value="#FFFFFF"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="WidthRequest" Value="1000"/>
+                <Setter Property="TextColor" Value="#000000"/>
+                <Setter Property="PlaceholderColor" Value="#084B8A"/>
+                <Setter Property="Margin" Value="5,5,5,5"/>
+            </Style>
+
+            <Style TargetType="Entry" x:Key="EntrySendStyle">
+                <Setter Property="BackgroundColor" Value="#FFFFFF"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="WidthRequest" Value="500"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="TextColor" Value="#000000"/>
+                <Setter Property="PlaceholderColor" Value="#084B8A"/>
+                <Setter Property="Margin" Value="5,5,5,5"/>
+            </Style>
+            <!--<Style TargetType="DatePicker" x:Key="DatePickerStyle">
+        <Setter Property="BackgroundColor" Value="#FFFFFF"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="WidthRequest" Value="1000"/>
+        <Setter Property="TextColor" Value="#000000"/>
+        <Setter Property="Margin" Value="0,-128,0,0"/>
+      </Style>-->
+            <Style TargetType="Button" x:Key="ButtonStyle">
+                <Setter Property="BackgroundColor" Value="#0498E2"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="WidthRequest" Value="1000"/>
+                <Setter Property="TextColor" Value="#000000"/>
+                <Setter Property="Margin" Value="5,5,5,5"/>
+                <Setter Property="BorderRadius" Value="30"/>
+                <Setter Property="BorderColor" Value="Transparent"/>
+                <Setter Property="TextColor" Value="#FFFFFF"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Style TargetType="Button" x:Key="ButtonActStyle">
+                <Setter Property="BackgroundColor" Value="#01A9DB"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="WidthRequest" Value="1000"/>
+                <Setter Property="TextColor" Value="#000000"/>
+                <Setter Property="Margin" Value="0,-128,0,0"/>
+                <Setter Property="BorderRadius" Value="0"/>
+                <Setter Property="BorderColor" Value="Transparent"/>
+                <Setter Property="TextColor" Value="#FFFFFF"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Style TargetType="Button" x:Key="BtnFlatStyle">
+                <Setter Property="BackgroundColor" Value="#0498E2"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="WidthRequest" Value="1000"/>
+                <Setter Property="TextColor" Value="#000000"/>
+                <Setter Property="Margin" Value="0,-128,0,0"/>
+                <Setter Property="BorderRadius" Value="20"/>
+                <Setter Property="BorderColor" Value="Transparent"/>
+                <Setter Property="TextColor" Value="#FFFFFF"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Style TargetType="Grid" x:Key="GridStyle">
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="Padding" Value="15"/>
+            </Style>
+            <Style TargetType="Grid" x:Key="GridMenuStyle">
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+            <Style TargetType="Button" x:Key="LinkStyle">
+                <Setter Property="TextColor" Value="#000000"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="BorderWidth" Value="0"/>
+                <Setter Property="BorderColor" Value="Transparent" />
+            </Style>
+            <Style TargetType="Label" x:Key="SaldoStyle">
+                <Setter Property="TextColor" Value="#FFFFFF"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="End"/>
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="HeightRequest" Value="100" />
+            </Style>
+            <Style TargetType="controls:CircleImage" x:Key="ProfilePhoto">
+                <Setter Property="HeightRequest" Value="150"/>
+                <Setter Property="WidthRequest" Value="150"/>
+                <Setter Property="Aspect" Value="AspectFit"/>
+                <Setter Property="BorderColor" Value="White"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+
+            
+            <!--<Style TargetType="local:RoundedButton" x:Key="RoundedButtonStyle">
+                <Setter Property="BackgroundColor" Value="#000000" />
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="WidthRequest" Value="40" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>-->
+            <Style TargetType="StackLayout" x:Key="SLContentStyle">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+            <Style TargetType="StackLayout" x:Key="SLFooterStyle">
+                <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+                <Setter Property="VerticalOptions" Value="EndAndExpand" />
+            </Style>
+            <Style TargetType="Label" x:Key="SaldoPromedioTextStyle">
+                <Setter Property="FontSize" Value="40" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="#FFFFFF"/>
+                <Setter Property="Opacity" Value="4"/>
+            </Style>
+            <Style TargetType="Label" x:Key="LabelStyle">
+                <Setter Property="FontSize" Value="18" />
+
+                <Setter Property="TextColor" Value="#084B8A"/>
+                <Setter Property="Opacity" Value="2"/>
+            </Style>
+            <Style TargetType="RelativeLayout" x:Key="HeaderStyle">
+                <Setter Property="VerticalOptions" Value="Start"/>
+                <Setter Property="HeightRequest" Value="64"/>
+            </Style>
+            <Style TargetType="RelativeLayout" x:Key="FooterStyle">
+                <Setter Property="VerticalOptions" Value="End"/>
+                <Setter Property="BackgroundColor" Value="#00ff00"/>
+                <Setter Property="HeightRequest" Value="64"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

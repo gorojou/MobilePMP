@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:mobilePMP.Views"
+             xmlns:vm="clr-namespace:mobilePMP.ViewModels"
+             x:Class="mobilePMP.Views.RecibirPage"
+             BackgroundImage ="bckrecibir.png">
+    <ContentPage.Content>
+    <ScrollView Style="{StaticResource ScrollViewStyle}">
+        <StackLayout Style="{StaticResource StackLayoutStyle}" VerticalOptions="CenterAndExpand">
+            <Grid Style="{StaticResource GridStyle}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/> 
+                    <RowDefinition Height="50"/>  
+                </Grid.RowDefinitions>
+                <Image x:Name="logo" Source="Icon.png" Grid.Row="0" Grid.ColumnSpan="3" WidthRequest="100" HeightRequest="100" HorizontalOptions="CenterAndExpand" Margin="20,20,20,20" />
+                <Label x:Name="miusuario" Grid.Row="1" Grid.ColumnSpan="3" BackgroundColor="Transparent"  Style="{StaticResource LabelStyle}"  Text=" Mi usuario es @TEST">
+
+                </Label>
+                <local:QRResult x:Name="qrResult" Grid.Row="2" Grid.ColumnSpan="3"  />
+                <Entry x:Name="montorecibirpmp" Grid.Row="4" Grid.Column="0"   BackgroundColor="Transparent" Style="{StaticResource EntrySendStyle}" Placeholder="Monto PMP" Keyboard="Numeric">
+
+
+                </Entry>
+                <Entry x:Name="montorecibirusd" Grid.Row="4" Grid.Column="1"   BackgroundColor="Transparent" Style="{StaticResource EntrySendStyle}" Placeholder="Monto USD" IsEnabled="false" Keyboard="Numeric">
+
+
+                </Entry>
+
+                  <Entry x:Name="montorecibireur" Grid.Row="4" Grid.Column="2"   BackgroundColor="Transparent" Style="{StaticResource EntrySendStyle}" Placeholder="Monto EUR" IsEnabled="false" Keyboard="Numeric">
+
+
+                </Entry>   
+
+                <Button x:Name="recibir" Grid.Row="5" Grid.ColumnSpan="3" Text="Recibir"  Style="{StaticResource ButtonStyle}"   Clicked="OnRecibirClicked"/>
+            </Grid>
+
+        </StackLayout>
+    </ScrollView>
+   </ContentPage.Content>
+</ContentPage>

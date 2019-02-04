@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="mobilePMP.Views.ConfirmPingPage"            
+             BackgroundImage="bkclogin.png">
+
+    
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource StackLayoutStyle}"  >
+            <Image x:Name="logo" Source="Icon.png" WidthRequest="100" HeightRequest="100" 
+                   HorizontalOptions="CenterAndExpand" Margin="20,20,20,0" />          
+            <Entry x:Name="pingEntry" Placeholder="_ _ _ _" TextChanged="Entry_TextChanged" Keyboard="Numeric"  />
+            <Button x:Name="pingbutton" Text="Ingresar" Style="{StaticResource ButtonStyle}" Clicked="OnPingButtonClickedvoid" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

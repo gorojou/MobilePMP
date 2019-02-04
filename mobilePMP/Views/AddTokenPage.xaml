@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="mobilePMP.Views.AddTokenPage"
+             BackgroundImage="bcktest2.png">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="save.png" Text="guardar" Priority="0" Clicked="OnAddTokenButtonClicked" Command="{Binding SaveTokenCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <Image x:Name="logo" Source="Icon.png" WidthRequest="100" HeightRequest="100" 
+                   HorizontalOptions="CenterAndExpand" Margin="20,20,20,0" /> 
+            <Label Text="Nombre :" Style="{StaticResource LabelStyle}" />
+            <Entry HorizontalTextAlignment="Start" Text="{Binding TokenName, Mode=TwoWay}" Placeholder="Nombre del Token" />
+            <Label Text="Hash del Token :" Style="{StaticResource LabelStyle}" />
+            <Entry Text="{Binding TokenAddress, Mode=TwoWay}" Placeholder="Hash del Token" />
+            <Label Text="Simbolo :" Style="{StaticResource LabelStyle}"/>
+            <Entry  Text="{Binding Symbol, Mode=TwoWay}" Placeholder="Token Symbol" />
+            <Label Text="Decimales :" Style="{StaticResource LabelStyle}" />
+            <Entry Text="{Binding DecimalPlaces, Mode=TwoWay}" Placeholder="Lugares decimales del token" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

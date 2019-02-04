@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="mobilePMP.Views.SignUpPage"
+             BackgroundImage ="bkclogin.png">
+     <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="save.png" Text="guardar" Priority="0" Clicked="OnSignUpButtonClicked"  />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource StackLayoutStyle}">
+            <Image x:Name="logo" Source="Icon.png" WidthRequest="100" HeightRequest="100" 
+                   HorizontalOptions="CenterAndExpand" Margin="20,20,20,0" />          
+
+            <Entry x:Name="usernameEntry" Placeholder="Usuario" />
+
+            <Entry x:Name="passwordEntry" IsPassword="true" Placeholder="Password" />
+
+            <Entry x:Name="emailEntry" Placeholder="Email" />
+            
+            <Button Text="Registro" Style="{StaticResource ButtonStyle}"   />
+            <Label x:Name="messageLabel" Style="{StaticResource LabelStyle}" Margin="3,3,3,3" VerticalOptions="CenterAndExpand"  />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

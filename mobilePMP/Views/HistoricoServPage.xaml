@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="mobilePMP.Views.HistoricoServPage" BackgroundImage="bckrenviar.png">
+  <ScrollView>
+    <StackLayout Orientation="Vertical" Spacing="10">
+      <Image Source="Icon.png" WidthRequest="100" HeightRequest="100"/>
+      <StackLayout Spacing="50"
+                   Padding="50"
+                   VerticalOptions="FillAndExpand">
+
+        <Label
+               Text="PMPlus Wallet"
+               LineBreakMode="WordWrap"/>
+
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="CenterAndExpand"
+                     Spacing="10">
+
+          <Image x:Name="twitter" Source="twitter.png"/>
+          <Image x:Name="facebook" Source="facebook.png"/>
+          <Image x:Name="instagram" Source="instagram.png"/>
+        </StackLayout>
+
+      </StackLayout>
+
+    </StackLayout>
+
+  </ScrollView>
+
+</ContentPage>

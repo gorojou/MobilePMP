@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="mobilePMP.Helpers.MasterPageItem"
+             xmlns:views="mobilePMP.Views.PerfilPage"
+             x:Class="mobilePMP.Views.MasterPage"
+             xmlns:viewModel="clr-namespace:mobilePMP.ViewModels"
+             Padding="0,40,0,0"
+             Icon="menu.png"
+             Title="Informacion Adicional">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource StackLayoutStyle}" >
+    <ListView x:Name="listView" x:FieldModifier="public">
+       <ListView.ItemsSource>
+            <x:Array Type="{x:Type local:MasterPageItem}">
+                    <!--<local:MasterPageItem Title="Agregar Token" Icon="Icon.png" TargetType="{x:Type views:AddTokenPage}" />-->
+                    <local:MasterPageItem Title="Perfil" Icon="perfil.png" TargetType="{x:Type views:PerfilPage}" />
+                    <local:MasterPageItem Title="Configura tu Ping" Icon="ping.png" TargetType="{x:Type views:PingPage}" />   
+                    <local:MasterPageItem Title="Historico" Icon="transacciones.png" TargetType="{x:Type views:HistoricoPage}" />
+                   <!-- <local:MasterPageItem Title="Historico de Servicios" Icon="ping.png" TargetType="{x:Type views:HistoricoServPage}" />-->
+                    <local:MasterPageItem Title="Acerca de PMP" Icon="about.png" TargetType="{x:Type views:AcercaPage}" />
+                    <local:MasterPageItem Title="Ir al inicio" Icon="home.png" TargetType="{x:Type views:TabPage}" />   
+                     
+            </x:Array>
+        </ListView.ItemsSource>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Padding="5,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding Icon}" />
+                        <Label Grid.Column="1" Text="{Binding Title}" />
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+ 
+</StackLayout>
+
+
+
+    </ContentPage.Content>
+</ContentPage>
